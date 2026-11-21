@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.educms.controller.DashboardController" styleClass="scroll-plain">
+    <VBox spacing="20" styleClass="page">
+        <padding><Insets top="28" right="32" bottom="28" left="32"/></padding>
+
+        <VBox spacing="2">
+            <Label text="Dashboard" styleClass="page-title"/>
+            <Label text="Overview of content, media, and team activity" styleClass="page-subtitle"/>
+        </VBox>
+
+        <HBox spacing="16">
+            <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+                <Label text="Articles" styleClass="stat-label"/>
+                <Label fx:id="articleCountLabel" styleClass="stat-value"/>
+            </VBox>
+            <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+                <Label text="Blog Posts" styleClass="stat-label"/>
+                <Label fx:id="blogCountLabel" styleClass="stat-value"/>
+            </VBox>
+            <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+                <Label text="Media Files" styleClass="stat-label"/>
+                <Label fx:id="mediaCountLabel" styleClass="stat-value"/>
+            </VBox>
+            <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+                <Label text="Team Members" styleClass="stat-label"/>
+                <Label fx:id="userCountLabel" styleClass="stat-value"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="16">
+            <VBox styleClass="chart-card" HBox.hgrow="ALWAYS">
+                <Label text="Content by Status" styleClass="card-title"/>
+                <PieChart fx:id="statusPieChart" legendVisible="true" prefHeight="280"/>
+            </VBox>
+            <VBox styleClass="chart-card" HBox.hgrow="ALWAYS">
+                <Label text="Content by Type" styleClass="card-title"/>
+                <BarChart fx:id="typeBarChart" prefHeight="280" legendVisible="false">
+                    <xAxis><CategoryAxis fx:id="typeAxis"/></xAxis>
+                    <yAxis><NumberAxis fx:id="countAxis"/></yAxis>
+                </BarChart>
+            </VBox>
+        </HBox>
+
+        <VBox styleClass="chart-card">
+            <Label text="Recent Activity" styleClass="card-title"/>
+            <ListView fx:id="activityListView" prefHeight="220"/>
+        </VBox>
+    </VBox>
+</ScrollPane>

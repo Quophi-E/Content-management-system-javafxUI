@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="16" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.educms.controller.MediaListController" styleClass="page">
+    <padding><Insets top="28" right="32" bottom="28" left="32"/></padding>
+
+    <VBox spacing="2">
+        <Label text="Media Library" styleClass="page-title"/>
+        <Label text="Images, documents, and other assets used in your content" styleClass="page-subtitle"/>
+    </VBox>
+
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <TextField fx:id="searchField" promptText="Search by filename or description..." HBox.hgrow="ALWAYS"/>
+        <Button text="⬆ Upload File" onAction="#handleUpload" styleClass="primary-button"/>
+    </HBox>
+
+    <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="filenameColumn" text="Filename" prefWidth="240"/>
+            <TableColumn fx:id="typeColumn" text="Type" prefWidth="90"/>
+            <TableColumn fx:id="sizeColumn" text="Size" prefWidth="90"/>
+            <TableColumn fx:id="uploaderColumn" text="Uploaded By" prefWidth="140"/>
+            <TableColumn fx:id="uploadedColumn" text="Uploaded" prefWidth="150"/>
+            <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="110"/>
+        </columns>
+        <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+    </TableView>
+</VBox>

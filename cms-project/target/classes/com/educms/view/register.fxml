@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.educms.controller.RegisterController" styleClass="auth-root">
+    <VBox alignment="CENTER" maxWidth="400" spacing="14" styleClass="auth-card">
+        <padding><Insets top="36" right="40" bottom="36" left="40"/></padding>
+
+        <VBox alignment="CENTER" spacing="4">
+            <Label text="Create Account" styleClass="auth-title"/>
+            <Label text="Join the content team" styleClass="auth-subtitle"/>
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Full Name"/>
+            <TextField fx:id="fullNameField" promptText="Jane Doe"/>
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Username"/>
+            <TextField fx:id="usernameField" promptText="jdoe"/>
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Email"/>
+            <TextField fx:id="emailField" promptText="jane@example.com"/>
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Role"/>
+            <ComboBox fx:id="roleCombo" maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Password"/>
+            <PasswordField fx:id="passwordField" promptText="At least 8 chars, 1 letter, 1 digit"/>
+        </VBox>
+
+        <VBox spacing="6">
+            <Label text="Confirm Password"/>
+            <PasswordField fx:id="confirmPasswordField" promptText="Re-enter password"/>
+        </VBox>
+
+        <Label fx:id="errorLabel" styleClass="error-label" wrapText="true" managed="false" visible="false"/>
+
+        <Button text="Create Account" onAction="#handleRegister" maxWidth="Infinity" styleClass="primary-button"/>
+
+        <HBox alignment="CENTER" spacing="4">
+            <Label text="Already have an account?"/>
+            <Hyperlink text="Sign in" onAction="#goToLogin"/>
+        </HBox>
+    </VBox>
+</StackPane>

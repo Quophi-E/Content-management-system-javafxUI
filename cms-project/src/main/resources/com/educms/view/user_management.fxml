@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="16" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.educms.controller.UserManagementController" styleClass="page">
+    <padding><Insets top="28" right="32" bottom="28" left="32"/></padding>
+
+    <VBox spacing="2">
+        <Label text="User Management" styleClass="page-title"/>
+        <Label text="Administer team accounts and roles" styleClass="page-subtitle"/>
+    </VBox>
+
+    <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Full Name" prefWidth="200"/>
+            <TableColumn fx:id="usernameColumn" text="Username" prefWidth="150"/>
+            <TableColumn fx:id="emailColumn" text="Email" prefWidth="200"/>
+            <TableColumn fx:id="roleColumn" text="Role" prefWidth="140"/>
+            <TableColumn fx:id="lastLoginColumn" text="Last Login" prefWidth="160"/>
+            <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="110"/>
+        </columns>
+        <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+    </TableView>
+</VBox>

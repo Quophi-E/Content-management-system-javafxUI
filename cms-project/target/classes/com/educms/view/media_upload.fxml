@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="14" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.educms.controller.MediaUploadController" prefWidth="440" styleClass="dialog-root">
+    <padding><Insets top="20" right="24" bottom="20" left="24"/></padding>
+
+    <Label text="Upload Media File" styleClass="page-title"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="Choose File..." onAction="#handleChooseFile"/>
+        <Label fx:id="fileNameLabel" text="No file selected" styleClass="hint-label"/>
+    </HBox>
+
+    <VBox spacing="6">
+        <Label text="Description"/>
+        <TextArea fx:id="descriptionArea" prefHeight="90" wrapText="true" promptText="What is this file for?"/>
+    </VBox>
+
+    <Label fx:id="errorLabel" styleClass="error-label" wrapText="true" managed="false" visible="false"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Cancel" onAction="#handleCancel"/>
+        <Button text="Upload" onAction="#handleUpload" styleClass="primary-button"/>
+    </HBox>
+</VBox>
